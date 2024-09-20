@@ -1,3 +1,5 @@
+// Simulate Add event listener to btnAdd
+
 $(document).ready(function () {
     $('#btnDelete').click(deleteTown);
     $('#btnAdd').click(addTown);
@@ -20,6 +22,7 @@ function deleteTown() {
         showMessage(townName + " not found.");
 }
 
+// Simulate adding function addTown()
 function addTown() {
     let townName = $('#townNameForAdd').val();
     $('#townNameForAdd').val('');
