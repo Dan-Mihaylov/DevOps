@@ -1,4 +1,5 @@
 // Simulate Add event listener to btnAdd
+// Simulate Add event listener to btnShuffle
 
 $(document).ready(function () {
     $('#btnDelete').click(deleteTown);
@@ -37,6 +38,7 @@ function showMessage(msg) {
     }, 3000);
 }
 
+// Simulate adding shuffle towns function
 function shuffleTowns() {
     let towns = $('#towns option').toArray();
     $('#towns').empty();
