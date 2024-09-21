@@ -334,5 +334,7 @@ button:hover {
     margin-right: 20px;
 }
 
-/* Removed the last style */
-
+.selected-room{
+    background-color: #c9c0be !important;
+}
+/* End reservation form functionality */
