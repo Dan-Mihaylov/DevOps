@@ -43,6 +43,7 @@ jobs:
       
     - name: Install Dependencies
       run: npm install
+      working-directory: ./Student-Registry-App
 
     - name: Testing Application
       run: npm run test
