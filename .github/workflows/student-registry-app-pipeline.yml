@@ -35,12 +35,15 @@ jobs:
     needs: build
 
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
+    - name: Checkout Repository
+      uses: actions/checkout@v4
         
-      - name: Install Node
-        uses: actions/setup-node@v4
+    - name: Install Node
+      uses: actions/setup-node@v4
+      
+    - name: Install Dependencies
+      run: npm install
 
-      - name: Testing Application
-        run: npm test
-        working-directory: ./Students-Registry-App
+    - name: Testing Application
+      run: npm run test
+      working-directory: ./Student-Registry-App
