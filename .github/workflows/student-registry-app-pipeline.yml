@@ -25,6 +25,11 @@ jobs:
       
     - name: Install Node
       uses: actions/setup-node@v4
+    
+    - name: Install Dependencies
+      run: npm install
+      working-directory: ./Student-Registry-App
 
-    - run: npm install
-    - run: npm test
+    - name: Test App  
+      run: npm test
+      working-directory: ./Student-Registry-App
