@@ -43,4 +43,4 @@ jobs:
 
       - name: Testing Application
         run: npm test
-        working-directory: ./Students-Registry-App
+        working-directory: ./Student-Registry-App
