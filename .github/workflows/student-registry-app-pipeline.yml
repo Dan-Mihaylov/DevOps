@@ -40,6 +40,9 @@ jobs:
         
       - name: Install Node
         uses: actions/setup-node@v4
+      
+      - name: Install Dependencies
+        run: npm install
 
       - name: Testing Application
         run: npm test
