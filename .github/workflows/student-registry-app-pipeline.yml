@@ -1,0 +1,30 @@
+name: Student Registry App
+
+on:
+  push:
+    branches:
+      - student-registry-app
+  pull_request:
+    branches:
+      - student-registry-app
+  workflow_dispatch:
+
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    # Implement running on three different machines later on
+    # strategy:
+    #   matrix:
+    #     node-version: [18.x, 20.x, 22.x]
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+      
+    - name: Install Node
+      uses: actions/setup-node@v4
+
+    - run: npm install
+    - run: npm test
