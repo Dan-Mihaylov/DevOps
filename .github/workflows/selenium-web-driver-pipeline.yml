@@ -56,3 +56,5 @@ jobs:
       run: |
         echo "Running Tests For Project 3"
         dotnet test TestProject3/TestProject3.csproj --verbosity normal
+      working-directory: ./Selenium-Web-Driver
+  
