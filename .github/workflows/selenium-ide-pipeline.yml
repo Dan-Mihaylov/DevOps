@@ -36,7 +36,9 @@ jobs:
         working-directory: ./Selenium-IDE
       
       - name: Test Application
-        run: dotnet test --no-build --verbosity normal
+        env:
+          CHROMEWEBDRIVER: /usr/bin/google-chrome
+        run: dotnet test -verbosity normal
         working-directory: ./Selenium-IDE
 
         
