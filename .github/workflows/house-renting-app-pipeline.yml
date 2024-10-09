@@ -33,4 +33,4 @@ jobs:
     
     - name: Test Application
       run: dotnet test --no-build --verbosity normal
-      working-directory: ./House-Reting-App
+      working-directory: ./House-Renting-App
