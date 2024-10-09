@@ -21,24 +21,26 @@ jobs:
       
       - name: Install .NET
         uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 6.0.x
       
       - name: Install Chrome
         run: |
           sudo apt-get update
-          sudo apt-get install google-chrome-stable
+          sudo apt-get install -y google-chrome-stable
 
       - name: Restore Application
         run: dotnet restore
         working-directory: ./Selenium-IDE
       
       - name: Build Application
-        run: dotnet build --no-restore
+        run: dotnet build
         working-directory: ./Selenium-IDE
       
       - name: Test Application
         env:
           CHROMEWEBDRIVER: /usr/bin/google-chrome
-        run: dotnet test --no-build --verbosity normal
+        run: dotnet test --verbosity normal
         working-directory: ./Selenium-IDE
 
         
