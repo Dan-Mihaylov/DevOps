@@ -34,10 +34,12 @@ jobs:
       run: dotnet build SeleniumBasicExercise.sln --no-restore
       working-directory: ./Selenium-Web-Driver
     
-    - name: Test Application
+    - name: Test Project 1
       env:
         CHROMEWEBDRIVER: /usr/bin/google-chrome
-      run: dotnet test --no-build --verbosity normal
+      run: |
+        echo "Runing Tests For Project 1"
+        dotnet test TestProject1/TestProject1.csproj --verbosity normal
       working-directory: ./Selenium-Web-Driver
     
     
