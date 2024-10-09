@@ -41,5 +41,6 @@ jobs:
         env:
           CHROMEWEBDRIVER: /usr/bin/google-chrome
         run: dotnet test --verbosity normal
+        working-directory: ./Selenium-IDE
 
         
