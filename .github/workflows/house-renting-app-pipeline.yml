@@ -7,7 +7,7 @@ on:
   pull_request:
     branches:
       - house-renting-app
-  workflow-dispatch:
+  workflow_dispatch:
 
 jobs:
 
