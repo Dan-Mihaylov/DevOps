@@ -22,6 +22,11 @@ jobs:
       - name: Install .NET
         uses: actions/setup-dotnet@v4
       
+      - name: Install Chrome
+        run: 
+          sudo apt-get update
+          sudo apt-get install -y google-chrome-stable
+      
       - name: Restore Application
         run: dotnet restore
         working-directory: ./Selenium-IDE
