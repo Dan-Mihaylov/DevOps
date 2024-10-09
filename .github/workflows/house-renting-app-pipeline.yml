@@ -1,0 +1,36 @@
+name: House Renting App
+
+on:
+  push:
+    branches:
+      - house-renting-app
+  pull_request:
+    branches:
+      - house-renting-app
+  workflow-dispatch:
+
+jobs:
+
+  build-and-test:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+    
+    - name: Install .NET
+      uses: actions/setup-dotnet@v4
+    
+    - name: Restore dependencies
+      run: dotnet restore
+      working-directory: ./House-Renting-App
+    
+    - name: Build Application
+      run: dotnet build --no-restore
+      working-directory: ./House-Renting-App
+    
+    - name: Test Application
+      run: dotnet test --no-build --verbosity normal
+      working-directory: ./House-Reting-App
