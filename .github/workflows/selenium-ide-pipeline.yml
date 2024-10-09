@@ -1,0 +1,35 @@
+name: Selenium IDE Tests
+
+on: 
+  push:
+    branches:
+      - selenium-ide
+  pull_request:
+    branches:
+      - selenium-ide
+  workflow_dispatch:
+
+jobs:
+
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+      
+      - name: Install .NET
+        uses: actions/setup-dotnet@v4
+      
+      - name: Restore Application
+        run: dotnet restore
+        working-directory: ./Selenium-IDE
+      
+      - name: Build Application
+        run: dotnet build
+        working-directory: ./Selenium-IDE
+      
+      - name: Test Application
+        run: dotnet test
+        working-directory: ./Selenium-IDE
