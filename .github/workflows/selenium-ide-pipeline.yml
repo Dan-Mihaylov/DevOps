@@ -27,9 +27,9 @@ jobs:
         working-directory: ./Selenium-IDE
       
       - name: Build Application
-        run: dotnet build
+        run: dotnet build --no-restore
         working-directory: ./Selenium-IDE
       
       - name: Test Application
-        run: dotnet test
+        run: dotnet test --no-build --verbosity normal
         working-directory: ./Selenium-IDE
