@@ -35,6 +35,8 @@ jobs:
       working-directory: ./Selenium-Web-Driver
     
     - name: Test Application
+      env:
+        CHROMEWEBDRIVER: /usr/bin/google-chrome
       run: dotnet test --no-build --verbosity normal
       working-directory: ./Selenium-Web-Driver
     
