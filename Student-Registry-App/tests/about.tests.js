@@ -10,4 +10,4 @@ suite('About page', function() {
   });
 });
 
-// Adding comment to check if Jenkins runs jobs on git push
+// Changing comment to see if npm commands run after build
