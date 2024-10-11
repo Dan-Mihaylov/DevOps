@@ -9,3 +9,5 @@ suite('About page', function() {
     assert.ok(body.includes("<h1>About</h1>"));
   });
 });
+
+// Adding comment to check if Jenkins runs jobs on git push
