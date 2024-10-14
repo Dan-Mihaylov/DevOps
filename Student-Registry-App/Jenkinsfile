@@ -10,6 +10,7 @@ pipeline {
 
         stage('Install Node.js') {
             steps {
+              sh 'echo $PATH'
                 script {
                     def nodeHome = tool name: 'NodeJS', type: 'NodeJS'
                     env.PATH = "${nodeHome}/bin:${env.PATH}"
