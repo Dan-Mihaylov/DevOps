@@ -1,0 +1,48 @@
+pipeline {
+    agent any
+    
+    stages {
+        stage('Pull Repo') {
+            steps {
+                git branch: 'jenkinsfile', url: 'https://github.com/Dan-Mihaylov/DevOps'
+            }
+        }
+
+        stage('Install Dependencies') {
+            steps {
+              script {
+                nodejs('NodeJS') {
+                    dir('Student-Registry-App') {
+                      sh 'npm install'
+                    }
+                }
+              }
+            }
+        }
+
+        stage('Test Application') {
+            steps {
+              script {
+                nodejs('NodeJS') {
+                  dir ('Student-Registry-App') {
+                    sh 'npm test'
+                  }
+                }
+              }
+            }
+        }
+    }
+
+    post {
+        always {
+            echo 'Cleaning up workspace...'
+            cleanWs()
+        }
+        success {
+            echo 'Pipeline completed successfully!'
+        }
+        failure {
+            echo 'Pipeline failed.'
+        }
+    }
+}
