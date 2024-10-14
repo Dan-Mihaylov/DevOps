@@ -10,4 +10,4 @@ suite('About page', function() {
   });
 });
 
-// Changing comment to see if npm commands run after build
+// Changing comment to test Jenkins CI
