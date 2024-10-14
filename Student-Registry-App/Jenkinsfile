@@ -1,5 +1,5 @@
 pipeline {
-    agent docker { image 'node:22-alpine3.19' }
+    agent any
     
     stages {
         stage('Pull Repo') {
@@ -10,17 +10,25 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                dir('Student-Registry-App') {
-                  sh 'ls'
+              script {
+                nodejs('NodeJS') {
+                    dir('Student-Registry-App') {
+                      sh 'npm install'
+                    }
                 }
+              }
             }
         }
 
         stage('Test Application') {
             steps {
-                dir ('Student-Registry-App') {
-                  sh 'ls'
+              script {
+                nodejs('NodeJS') {
+                  dir ('Student-Registry-App') {
+                    sh 'npm test'
+                  }
                 }
+              }
             }
         }
     }
