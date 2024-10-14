@@ -10,15 +10,17 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                sh 'cd Student-Registry-App'
-                sh 'ls'
+                dir('Student-Registry-App') {
+                  sh 'ls'
+                }
             }
         }
 
         stage('Test Application') {
             steps {
-                sh 'cd Student-Registry-App'
-                sh 'ls'
+                dir ('Student-Registry-App') {
+                  sh 'ls'
+                }
             }
         }
     }
