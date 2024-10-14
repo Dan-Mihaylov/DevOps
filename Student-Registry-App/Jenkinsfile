@@ -7,14 +7,13 @@ pipeline {
                 git branch: 'jenkinsfile', url: 'https://github.com/Dan-Mihaylov/DevOps'
             }
         }
-
-        stage('Install Node.js') {
+        
+        stage('Install Node.js Manually') {
             steps {
-              sh 'echo $PATH'
-                script {
-                    def nodeHome = tool name: 'NodeJS', type: 'NodeJS'
-                    env.PATH = "${nodeHome}/bin:${env.PATH}"
-                }
+                sh '''
+                curl -sL https://deb.nodesource.com/setup_14.x | bash -
+                apt-get install -y nodejs
+                '''
             }
         }
 
