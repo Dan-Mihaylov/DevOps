@@ -1,19 +1,10 @@
 pipeline {
-    agent any
+    agent docker { image 'node:22-alpine3.19' }
     
     stages {
         stage('Pull Repo') {
             steps {
                 git branch: 'jenkinsfile', url: 'https://github.com/Dan-Mihaylov/DevOps'
-            }
-        }
-        
-        stage('Install Node.js Manually') {
-            steps {
-                sh '''
-                curl -sL https://deb.nodesource.com/setup_22.x | bash -
-                apt-get install -y nodejs
-                '''
             }
         }
 
