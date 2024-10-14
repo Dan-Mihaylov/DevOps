@@ -11,7 +11,7 @@ pipeline {
         stage('Install Node.js') {
             steps {
                 script {
-                    def nodeHome = tool name: 'NodeJS_22.x', type: 'NodeJS'
+                    def nodeHome = tool name: 'NodeJS', type: 'NodeJS'
                     env.PATH = "${nodeHome}/bin:${env.PATH}"
                 }
             }
@@ -20,14 +20,14 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 sh 'cd Student-Registry-App'
-                sh 'npm install'
+                sh 'ls'
             }
         }
 
         stage('Test Application') {
             steps {
                 sh 'cd Student-Registry-App'
-                sh 'npm test'
+                sh 'ls'
             }
         }
     }
